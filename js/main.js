@@ -142,4 +142,12 @@ $(document).ready(function(){
         $("#display-text").text("Player 2 rolled a 1,Player 1 your turn to roll");
         $("#0").show();
     }
+    $("button#role-p1-btn").click(function(){
+        document.documentElement.style.setProperty('--spinTime', '500ms');
+        setTimeout(player1Play, 1000);
+    });
+    $("button#role-p2-btn").click(function(){
+        document.documentElement.style.setProperty('--spinTime', '500ms');
+        setTimeout(player2Play, 1000);
+    });
 })
