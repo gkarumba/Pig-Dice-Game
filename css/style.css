@@ -70,3 +70,15 @@ body{
     color: antiquewhite;
     margin: 20px;
 }
+.role-dice-btn{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.role-hold-btn{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
