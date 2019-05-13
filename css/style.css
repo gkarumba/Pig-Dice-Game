@@ -6,3 +6,23 @@
     --pipBgTop: #520802;
     --pipBgBottom: #F43435;
 }
+* {
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Press Start 2P', cursive;
+    background-image: linear-gradient(to top, #00008B 0%, #330867 100%);
+    background: cover;
+}
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #DAA520;
+    color: antiquewhite;
+}
