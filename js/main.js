@@ -154,4 +154,11 @@ $(document).ready(function(){
     });
     $("button#hold-p1-btn").on('click',player1Hold);
     $("button#hold-p2-btn").on('click',player2Hold);
+    $("#display-text").click(function (){
+        $("#instructions").show();
+    });
+    $("#instructions").click(function (){
+        $("#display-text").show();
+        $("#instructions").hide();
+    })
 })

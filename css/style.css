@@ -70,6 +70,16 @@ body{
     color: antiquewhite;
     margin: 20px;
 }
+#display-text:hover{
+    background: #DAA520;
+}
+#instructions{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: antiquewhite;
+    display:none;
+}
 .role-dice-btn{
     display: flex;
     justify-content: space-around;
