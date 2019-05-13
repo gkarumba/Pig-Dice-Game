@@ -106,4 +106,13 @@ $(document).ready(function(){
             };
         }
     }
+    var player1Hold = function(){
+        arrays.forEach(function(array){
+            $("#"+array).hide();
+        });
+        $(".role-dice-player2").show();
+        $(".role-dice-player1").hide();
+        $("#display-text").text("Player 1 held, player 2 your turn to roll");
+        $("#0").show();
+    }
 })
