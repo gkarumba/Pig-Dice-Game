@@ -150,4 +150,6 @@ $(document).ready(function(){
         document.documentElement.style.setProperty('--spinTime', '500ms');
         setTimeout(player2Play, 1000);
     });
+    $("button#hold-p1-btn").on('click',player1Hold);
+    $("button#hold-p2-btn").on('click',player2Hold);
 })
