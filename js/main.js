@@ -133,4 +133,13 @@ $(document).ready(function(){
         $("#display-text").text("Player 1 rolled a 1,Player 2 your turn to roll");
         $("#0").show();
     }
+    var player2Rolled1 = function(){
+        arrays.forEach(function(array){
+            $("#"+array).hide();
+        });
+        $(".role-dice-player1").show();
+        $(".role-dice-player2").hide();
+        $("#display-text").text("Player 2 rolled a 1,Player 1 your turn to roll");
+        $("#0").show();
+    }
 })
