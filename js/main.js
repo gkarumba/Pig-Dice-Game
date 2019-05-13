@@ -124,4 +124,13 @@ $(document).ready(function(){
         $("#display-text").text("Player 2 held, player 1 your turn to roll");
         $("#0").show();
     }
+    var player1Rolled1 = function(){
+        arrays.forEach(function(array){
+            $("#"+array).hide();
+        });
+        $(".role-dice-player2").show();
+        $(".role-dice-player1").hide();
+        $("#display-text").text("Player 1 rolled a 1,Player 2 your turn to roll");
+        $("#0").show();
+    }
 })
