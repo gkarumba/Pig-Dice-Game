@@ -1,16 +1,18 @@
-// class Player{
-//     constructor(name,total,show){
-//         this.name = name;
-//         this.total = total;
-//         this.show = show;
-//     }
-// var player1 = new Player() ;
-var totalP1 = 0;
-var totalP2 = 0;
+class Player{
+    constructor(total,show){
+        this.total = total;
+        this.show = show;
+    }
+}
+var player1 = new Player(0,0) ;
+var player2 = new Player(0,0);
+
+player1.total = 0;
+player2.total = 0;
 var arrays = [1,2,3,4,5,6];
-var showP1 = [];
-var showP2 = [];
-var arrays = [1,2,3,4,5,6];
+player1.show = [];
+player2.show = [];
+
 $(document).ready(function(){
     arrays.forEach(function(array){
         $("#"+array).hide();
@@ -18,10 +20,10 @@ $(document).ready(function(){
     var resetStuff = function(){
         arrays.forEach(function(array){
             $("#"+array).hide();
-            totalP1 = 0;
-            totalP2 = 0;
-            $("#score-p1").text(totalP1);
-            $("#score-p2").text(totalP2);
+            player1.total = 0;
+            player2.total = 0;
+            $("#score-p1").text(player1.total);
+            $("#score-p2").text(player2.total);
             $(".role-dice-player2").show();
             $(".role-dice-player1").show();
             $("#display-text").text("Start Game");
@@ -46,22 +48,22 @@ $(document).ready(function(){
             })
             console.log(numberP1);
             $("#role-p1-score").text(numberP1);
-            totalP1 += numberP1;
-            showP1.push(numberP1);
-            if(showP1.length === 1){
-                var latest = showP1[showP1.length-1];
+            player1.total += numberP1;
+            player1.show.push(numberP1);
+            if(player1.show.length === 1){
+                var latest = player1.show[player1.show.length-1];
             }else{
-                var latest = showP1[showP1.length-2];
-                if(showP1[showP1.length-2] === showP1[showP1.length-1]){
+                var latest = player1.show[player1.show.length-2];
+                if(player1.show[player1.show.length-2] === player1.show[player1.show.length-1]){
                     $("#"+latest).show();
                 }else{
                     $("#"+latest).hide();
                 }
             }
             console.log(latest);
-            console.log(totalP1);
-            $("#score-p1").text(totalP1);
-            if (totalP1 > 99){
+            console.log(player1.total);
+            $("#score-p1").text(player1.total);
+            if (player1.total > 99){
                 $("#display-text").text("Congratulations Player 1, You've Won");
                 setTimeout(resetStuff,3000);
             };
@@ -86,21 +88,21 @@ $(document).ready(function(){
             })
             console.log(numberP2);
             $("#role-p2-score").text(numberP2);
-            totalP2 += numberP2;
-            showP2.push(numberP2);
-            if(showP2.length === 1){
-                var latest = showP2[showP2.length-1];
+            player2.total += numberP2;
+            player2.show.push(numberP2);
+            if(player2.show.length === 1){
+                var latest = player2.show[player2.show.length-1];
             }else{
-                var latest = showP2[showP2.length-2];
-                if(showP2[showP2.length-2] === showP2[showP2.length-1]){
+                var latest = player2.show[player2.show.length-2];
+                if(player2.show[player2.show.length-2] === player2.show[player2.show.length-1]){
                     $("#"+latest).show();
                 }else{
                     $("#"+latest).hide();
                 }
             }
-            console.log(totalP2);
-            $("#score-p2").text(totalP2);
-            if (totalP2 > 99){
+            console.log(player2.total);
+            $("#score-p2").text(player2.total);
+            if (player2.total > 99){
                 $("#display-text").text("Congratulations Player 2, You've Won");
                 setTimeout(resetStuff,3000);
             };
