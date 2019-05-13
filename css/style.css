@@ -26,3 +26,34 @@ body{
     background-color: #DAA520;
     color: antiquewhite;
 }
+.score-board{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-areas: 
+    'score-p1 score-p2'
+}
+.col-md-4{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#score-p1{
+    background: red;
+}
+#score-p2{
+    background: green;
+}
+#role-score{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.role-p1-score,.player-1,.score-p1{
+    color:#CCAB81;
+}
+.role-p2-score,.player-2,.score-p2{
+    color:#DAC1A2;
+}
+#score-p1 ,#score-p2 {
+    color:antiquewhite;
+}
