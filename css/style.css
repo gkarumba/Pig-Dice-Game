@@ -174,3 +174,14 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
+footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    /* background: linear-gradient(to right, red 0%, green 100%); */
+    background-color: #DAA520;
+    color: antiquewhite;
+    margin-bottom: 0px;
+}
