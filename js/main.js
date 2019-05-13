@@ -27,5 +27,44 @@ $(document).ready(function(){
             $("#display-text").text("Start Game");
         });
     }
-    
+    var player1Play = function(){
+        document.documentElement.style.setProperty('--spinTime', '0ms');
+        document.documentElement.style.setProperty('--pipBg', '#F32D18');
+        document.documentElement.style.setProperty('--pipBgTop', '#520802');
+        document.documentElement.style.setProperty('--pipBgBottom', '#F43435');
+        $("#display-text").text("");
+        $(".role-dice-player2").hide();
+        var numberP1 = Math.floor((Math.random() * 6)+1);
+        if (numberP1 === 1){
+            player1Rolled1();
+        }else{
+            arrays.forEach(function(array){
+                if (numberP1 === array){
+                    $("#0").hide();
+                    $("#"+numberP1).show();
+                }
+            })
+            console.log(numberP1);
+            $("#role-p1-score").text(numberP1);
+            totalP1 += numberP1;
+            showP1.push(numberP1);
+            if(showP1.length === 1){
+                var latest = showP1[showP1.length-1];
+            }else{
+                var latest = showP1[showP1.length-2];
+                if(showP1[showP1.length-2] === showP1[showP1.length-1]){
+                    $("#"+latest).show();
+                }else{
+                    $("#"+latest).hide();
+                }
+            }
+            console.log(latest);
+            console.log(totalP1);
+            $("#score-p1").text(totalP1);
+            if (totalP1 > 99){
+                $("#display-text").text("Congratulations Player 1, You've Won");
+                setTimeout(resetStuff,3000);
+            };
+        }
+    }
 })
