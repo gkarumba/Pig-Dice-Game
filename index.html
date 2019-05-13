@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.4.0.js"
+    integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Titan+One" rel="stylesheet">
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pig-Dice</title>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER AND SCORE BOARD -->
+        <div class="row">
+            <div class="col-md-12 header">
+                <h1>Pig Dice</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="player-1">
+                    <p>player 1</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="score-board">
+                    <div class="score-p1">
+                        <p>Score</p>
+                        <p id="score-p1">0</p>
+                    </div>
+                    <div class="score-p2">
+                        <p>Score</p>
+                        <p id="score-p2">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="player-2">
+                    <p>player 2</p>
+                </div>
+            </div>
+        </div>
+        <!-- SCORE PER ROLL -->
+        <section class="role-score">
+            <div class="row" id="role-score">
+                <div class="col-md-6">
+                    <div class="role-p1-score">
+                        <p> Score per Roll <span id="role-p1-score"> 0</span></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="role-p2-score">
+                        <p> Score per Roll <span id="role-p2-score"> 0</span></p>
+                    </div>
+                </div>
+        </section>
+        <!-- OUTPUT TEXT SECTION -->
+        <section class="display-msg">
+            <div class="display-text">
+                <p id="display-text">Instructions</p>
+                <p id="instructions">
+                    Press the player1/2 roll button to start the game.<br>
+                    the score for each roll is displayed in the score per roll.<br>
+                    the cumulative score for each round is displayed in the score section.<br>
+                    the option to hold allows a player to pass the dice when satisfied with the points they've gained in a round of playing.<br>
+                    when a player dice rolls on number 1. the dice will be passed to the next player and the point is not added to the cumulatice score.<br>
+                    The first player to reach 100 points wins the game.<br>
+                    Click anywhere within the instructions to hide them.<br>
+                </p>
+            </div>
+        </section>
+        <!-- ROLL DICE SECTION -->
+        <section class="role-dice">
+            <div class="row" id="role-dice">
+                <div class="col-md-12">
+                    <div class="zero-face" id="0">
+                    </div>
+                    <div class="first-face" id="1">
+                        <span class="pip"></span>
+                    </div>
+                    <div class="second-face" id="2">
+                        <span class="pip"></span>
+                        <span class="pip"></span>
+                    </div>
+                    <div class="third-face" id="3">
+                        <span class="pip"></span>
+                        <span class="pip"></span>
+                        <span class="pip"></span>
+                    </div>
+                    <div class="fourth-face" id="4">
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                    </div>
+                    <div class="fifth-face" id="5">
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                        <div class="column">
+                            <span class="pip"></span>
+                        </div>
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                    </div>
+                    <div class="sixth-face" id="6">
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                        <div class="column">
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                            <span class="pip"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ROLL DICE BUTTONS SECTION -->
+        <section class="role-dice-btn">
+            <div class="role-dice-player1">
+                <button class="btn" id="role-p1-btn">Player 1 Roll</button>
+            </div>
+            <div class="role-dice-player2">
+                <button class="btn" id="role-p2-btn">Player 2 Roll</button>
+            </div>
+        </section>
+        <!-- HOLD ROLL BUTTONS SECTION -->
+        <section class="role-hold-btn">
+            <div class="role-dice-player1">
+                <button class="btn" id="hold-p1-btn">Player 1 Hold</button>
+            </div>
+            <div class="role-dice-player2">
+                <button class="btn" id="hold-p2-btn">Player 2 Hold</button>
+            </div>
+        </section>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>Made with &#x1F48C; by GKarumba, 2019 &#x00A9;</p>
+    </footer>
+</body>
+</html>

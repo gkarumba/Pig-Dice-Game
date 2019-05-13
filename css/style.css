@@ -1,0 +1,197 @@
+:root{
+    --angle: 360deg;
+    --view:none;
+    --spinTime:0ms;
+    --pipBg: #F32D18;
+    --pipBgTop: #520802;
+    --pipBgBottom: #F43435;
+}
+* {
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Press Start 2P', cursive;
+    background-image: linear-gradient(to top, #00008B 0%, #330867 100%);
+    background: cover;
+}
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #DAA520;
+    color: antiquewhite;
+}
+.score-board{
+    display: grid;
+    grid-gap: 40px;
+    grid-template-areas: 
+    'score-p1 score-p2'
+}
+.col-md-4{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#score-p1{
+    background: red;
+}
+#score-p2{
+    background: green;
+}
+#role-score{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.role-p1-score,.player-1,.score-p1{
+    color:#CCAB81;
+}
+.role-p2-score,.player-2,.score-p2{
+    color:#DAC1A2;
+}
+#score-p1 ,#score-p2 {
+    color:antiquewhite;
+}
+.role-dice{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+.display-msg{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: antiquewhite;
+    margin: 20px;
+}
+#display-text:hover{
+    background: #DAA520;
+}
+#instructions{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: antiquewhite;
+    display:none;
+}
+.role-dice-btn{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.role-hold-btn{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+[class$="face"] {
+    margin: 16px;
+    padding: 4px;
+    background-color: #e7e7e7;
+    width: 104px;
+    height: 104px;
+    object-fit: contain;
+    box-shadow:
+        inset 0 5px white, 
+        inset 0 -5px #bbb,
+        inset 5px 0 #d7d7d7, 
+        inset -5px 0 #d7d7d7;
+    border-radius: 10%;
+    animation-name: spin;
+    animation-duration: var(--spinTime);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(var(--angle));
+    }
+}
+.pip {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 4px;
+    background-color: var(--pipBg);
+    box-shadow: inset 0 3px var(--pipBgTop), inset 0 -3px var(--pipBgBottom);
+}
+.zero-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-face {
+    display: flex;
+    justify-content: space-between;
+}
+.second-face .pip:nth-of-type(2) {
+    align-self: flex-end;
+}
+.third-face {
+    display: flex;
+    justify-content: space-between;
+}
+.third-face .pip:nth-of-type(2) {
+    align-self: center;
+}
+.third-face .pip:nth-of-type(3) {
+    align-self: flex-end;
+}
+.fourth-face{
+    display: flex;
+    justify-content: space-between;
+}
+.fourth-face .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fifth-face {
+    display: flex;
+    justify-content: space-between;
+}
+.fifth-face .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fifth-face .column:nth-of-type(2) {
+    justify-content: center;
+}
+.sixth-face {
+    display: flex;
+    justify-content: space-between;
+}
+.sixth-face .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    /* background: linear-gradient(to right, red 0%, green 100%); */
+    background-color: #DAA520;
+    color: antiquewhite;
+    margin-bottom: 0px;
+}
