@@ -67,4 +67,43 @@ $(document).ready(function(){
             };
         }
     }
+    var player2Play = function(){
+        document.documentElement.style.setProperty('--spinTime', '0ms');
+        document.documentElement.style.setProperty('--pipBg', '#38AF1E');
+        document.documentElement.style.setProperty('--pipBgTop', '#247829');
+        document.documentElement.style.setProperty('--pipBgBottom', '#47D80F');
+        $("#display-text").text("");
+        $(".role-dice-player1").hide();
+        var numberP2 = Math.floor((Math.random() * 6)+1);
+        if(numberP2 === 1){
+            player2Rolled1();
+        }else{
+            arrays.forEach(function(array){
+                if (numberP2 === array){
+                    $("#0").hide();
+                    $("#"+numberP2).show();
+                }
+            })
+            console.log(numberP2);
+            $("#role-p2-score").text(numberP2);
+            totalP2 += numberP2;
+            showP2.push(numberP2);
+            if(showP2.length === 1){
+                var latest = showP2[showP2.length-1];
+            }else{
+                var latest = showP2[showP2.length-2];
+                if(showP2[showP2.length-2] === showP2[showP2.length-1]){
+                    $("#"+latest).show();
+                }else{
+                    $("#"+latest).hide();
+                }
+            }
+            console.log(totalP2);
+            $("#score-p2").text(totalP2);
+            if (totalP2 > 99){
+                $("#display-text").text("Congratulations Player 2, You've Won");
+                setTimeout(resetStuff,3000);
+            };
+        }
+    }
 })
