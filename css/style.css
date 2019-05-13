@@ -57,3 +57,16 @@ body{
 #score-p1 ,#score-p2 {
     color:antiquewhite;
 }
+.role-dice{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+.display-msg{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: antiquewhite;
+    margin: 20px;
+}
